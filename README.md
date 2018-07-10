@@ -1,0 +1,2 @@
+# mosayk.js
+My utils
