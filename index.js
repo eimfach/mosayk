@@ -1,4 +1,5 @@
 const expose = Object.freeze({
+  allFullfilled,
   sequentialIterator,
   timeout
 })
@@ -27,4 +28,8 @@ function timeout (length = 0) {
   })
 
   return timeout
+}
+
+function allFullfilled (promises) {
+  return promises.map((prom) => prom.catch(err => err))
 }
