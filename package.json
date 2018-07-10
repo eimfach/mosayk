@@ -6,9 +6,6 @@
   "scripts": {
     "test": "tape test/*.js"
   },
-  "bin": {
-    "tape": "./node_modules/tape/bin/tape"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/eimfach/mosayk.git"
