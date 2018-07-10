@@ -1,0 +1,25 @@
+{
+  "name": "mosayk",
+  "version": "1.0.0",
+  "description": "helper functions to create e.g. different iterator patterns",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "bin": {
+    "tape": "./node_modules/tape/bin/tape"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eimfach/mosayk.git"
+  },
+  "author": "Robin T. Gruenke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eimfach/mosayk/issues"
+  },
+  "homepage": "https://github.com/eimfach/mosayk#readme",
+  "devDependencies": {
+    "tape": "^4.9.1"
+  }
+}
