@@ -31,5 +31,5 @@ function timeout (length = 0) {
 }
 
 function allFullfilled (promises) {
-  return promises.map((prom) => prom.catch(err => err))
+  return Promise.all(promises.map((prom) => prom.catch(err => err)))
 }
