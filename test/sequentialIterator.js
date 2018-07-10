@@ -1,4 +1,4 @@
-const test = require('tape')
+const test = require('blue-tape')
 const mosayk = require('../index')
 
 test('sequentialIterator() returns an iterable', (assert) => {
