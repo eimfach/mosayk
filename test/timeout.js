@@ -6,20 +6,8 @@ test('timeout() returns a promise', (assert) => {
     Promise
 
   const actual =
-    mosayk.timeout().constructor
+    mosayk.promise.timeout().constructor
 
   assert.equal(actual, expected)
   assert.end()
 })
-
-test('timeout() resolves when callback is invoked',
-  (assert) =>
-    new Promise(async function (resolve, reject) {
-      try {
-        await mosayk.timeout()
-        resolve()
-      } catch (e) {
-        reject(e)
-      }
-    })
-)

@@ -1,10 +1,18 @@
-const expose = Object.freeze({
-  allFullfilled,
-  sequentialIterator,
-  timeout
+const api = Object.freeze({
+  promise: {
+    allFullfilled: promiseAllFullfilled,
+    timeout: promiseTimeout
+  },
+  iterable: {
+    sequence: sequentialIterator
+  },
+  number: {
+    isValidHex
+  }
+
 })
 
-module.exports = expose
+module.exports = api
 
 function sequentialIterator (arr, sequence) {
   arr[Symbol.iterator] = function * () {
@@ -20,16 +28,26 @@ function sequentialIterator (arr, sequence) {
   return arr[Symbol.iterator]()
 }
 
-function timeout (length = 0) {
+function promiseTimeout (length = 0) {
   const timeout = new Promise(function (resolve, reject) {
-    setTimeout(function () {
-      resolve()
-    }, length)
+    setTimeout(resolve, length)
   })
 
   return timeout
 }
 
-function allFullfilled (promises) {
+function promiseAllFullfilled (promises) {
   return Promise.all(promises.map((prom) => prom.catch(err => err)))
+}
+
+function isValidHex (num) {
+  for (let cha of num) {
+    if (typeof cha !== 'string' || cha.length > 1) {
+      return false
+    }
+    if (isNaN(parseInt('0x' + cha, 16))) {
+      return false
+    }
+  }
+  return !!num.length
 }

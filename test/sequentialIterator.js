@@ -6,17 +6,17 @@ test('sequentialIterator() returns an iterable', (assert) => {
     typeof createIterableArray([])[Symbol.iterator]
 
   const actual =
-    typeof mosayk.sequentialIterator([], 2)[Symbol.iterator]
+    typeof mosayk.iterable.sequence([], 2)[Symbol.iterator]
 
   assert.equal(actual, expected)
   assert.end()
 })
 
-test('sequentialIterator() returns sequences', (assert) => {
+test('sequentialIterator() returns sequences by given length', (assert) => {
   const expected = [[1, 2], [3, 4], [5, 6], [7, 8], [9]]
 
   const actual = []
-  const iterable = mosayk.sequentialIterator([1, 2, 3, 4, 5, 6, 7, 8, 9], 2)
+  const iterable = mosayk.iterable.sequence([1, 2, 3, 4, 5, 6, 7, 8, 9], 2)
 
   for (let seq of iterable) {
     actual.push(seq)

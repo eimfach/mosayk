@@ -1,6 +1,6 @@
 {
   "name": "mosayk",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "helper functions to create e.g. different iterator patterns",
   "main": "index.js",
   "scripts": {
