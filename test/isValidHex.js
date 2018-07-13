@@ -1,17 +1,6 @@
 const test = require('blue-tape')
 const mosayk = require('../index')
 
-test('isValidHex() throws a TypeError if param was passed', (assert) => {
-  try {
-    mosayk.number.isValidHex()
-    assert.fail('No TypeError thrown')
-  } catch (e) {
-    assert.pass()
-  } finally {
-    assert.end()
-  }
-})
-
 test('isValidHex() returns false if the given param is empty or falsy', (assert) => {
   const expected = false
   const actual =
