@@ -4,11 +4,21 @@ const mosayk = require('../index')
 test('isValidHex() returns false if the given param is empty or falsy', (assert) => {
   const expected = false
   const actual =
-  mosayk.number.isValidHex([]) ||
-  mosayk.number.isValidHex(['A B']) ||
-  mosayk.number.isValidHex(someFalsyIterables()[0]) ||
-  mosayk.number.isValidHex(someFalsyIterables()[1]) ||
-  mosayk.number.isValidHex(someFalsyIterables()[2])
+    mosayk.number.isValidHex([]) ||
+    mosayk.number.isValidHex(['A B']) ||
+    mosayk.number.isValidHex(['TA1']) ||
+    mosayk.number.isValidHex(someFalsyIterables()[0]) ||
+    mosayk.number.isValidHex(someFalsyIterables()[1]) ||
+    mosayk.number.isValidHex(someFalsyIterables()[2])
+
+  assert.equal(actual, expected)
+  assert.end()
+})
+
+test('isValidHex() returns true if the given param is a valid hex number', (assert) => {
+  const expected = true
+  const actual =
+    mosayk.number.isValidHex('0123ABCDEF')
 
   assert.equal(actual, expected)
   assert.end()

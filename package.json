@@ -4,7 +4,7 @@
   "description": "helper functions to create e.g. different iterator patterns",
   "main": "index.js",
   "scripts": {
-    "test": "tape test/*.js"
+    "test": "tape test/*.js | tap-notify | tap-diff "
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/eimfach/mosayk#readme",
   "devDependencies": {
-    "blue-tape": "^1.0.0"
+    "blue-tape": "^1.0.0",
+    "tap-diff": "^0.1.1",
+    "tap-notify": "^1.0.0"
   },
   "dependencies": {}
 }
